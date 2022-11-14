@@ -98,6 +98,7 @@
 					<py-script>
 						import numpy as np
 						import pandas as pd
+						from pyodide.http import open_url
 
 						data = pd.read_csv(open_url("https://github.com/Dan168/-DanCreates/blob/main/AAPL.csv")
 						X = data.iloc[:, 0].values.reshape(-1,1)
