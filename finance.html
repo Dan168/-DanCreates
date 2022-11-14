@@ -60,8 +60,6 @@
 			"numpy"
 			"pandas"
 			"scikit-learn"
-			"requests"
-			"io"
 			]
 		</py-config>
 
@@ -100,13 +98,10 @@
 					<py-script>
 						import numpy as np
 						import pandas as pd
-						import requests
-						import io
 						
-						url = "https://github.com/Dan168/-DanCreates/AAPL.csv" 
-						download = requests.get(url).content
+						url = "https://raw.githubusercontent.com/Dan168/-DanCreates/main/AAPL.csv" 
 						
-						data = pd.read_csv(io.StringIO(download.decode('utf-8')))
+						data = pd.read_csv(url)
 						X = data.iloc[:, 0].values.reshape(-1,1)
 						Y = data.iloc[:, 1].values.reshape(-1,1)
 
